@@ -13,17 +13,17 @@ const StatsFooter = ({ currentSessionFocus, totalFocusToday }) => {
     };
 
     return (
-        <footer className="stats-footer">
-            <div className="stat-item">
-                <span className="stat-label">Current Focus:</span>
-                <span className="stat-value">{formatDuration(currentSessionFocus)}</span>
+        <footer className="flex items-center justify-center gap-6 text-sm">
+            <div className="flex items-center gap-2">
+                <span className="text-gray-400">Current Focus:</span>
+                <span className="font-mono text-white">{formatDuration(currentSessionFocus)}</span>
             </div>
             
-            <div className="stat-divider"></div>
+            <div className="w-px h-6 bg-border"></div>
             
-            <div className="stat-item">
-                <span className="stat-label">Total Today:</span>
-                <span className="stat-value">{formatDuration(totalFocusToday)}</span>
+            <div className="flex items-center gap-2">
+                <span className="text-gray-400">Total Today:</span>
+                <span className="font-mono text-white">{formatDuration(totalFocusToday)}</span>
             </div>
         </footer>
     );
