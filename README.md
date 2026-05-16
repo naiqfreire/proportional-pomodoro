@@ -1,16 +1,52 @@
-# React + Vite
+# Proportional Pomodoro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um aplicativo de produtividade que adapta o tempo de descanso ao seu ritmo real de trabalho.
 
-Currently, two official plugins are available:
+O método Pomodoro tradicional força pausas a cada 25 minutos, quebrando o "estado de fluxo" (flow) de quem precisa de longos períodos de concentração. O _Proportional Pomodoro_ resolve isso invertendo a lógica: você trabalha pelo tempo que conseguir e o sistema calcula uma pausa matematicamente proporcional ao tempo dedicado.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ⚡ Features Principais
 
-## React Compiler
+- **Foco Progressivo (Timer Livre):** O cronômetro de foco conta para cima, permitindo que você trabalhe o tempo que quiser sem ser interrompido por alarmes.
+- **Descanso Inteligente:** Ao encerrar uma sessão de foco, o aplicativo pega o tempo exato que você dedicou e aplica uma taxa de descanso. O timer regressivo do descanso é gerado automaticamente.
+- **Controle de Intensidade:** Permite selecionar o multiplicador do descanso:
+    - `10%`: Para tarefas leves (ex: 60 min foco = 6 min descanso)
+    - `20%`: Equilibrado (ex: 60 min foco = 12 min descanso)
+    - `40%`: Para sessões de alta carga cognitiva (ex: 60 min foco = 24 min descanso)
+- **Rastreamento de Sessão:** Painel inferior que acumula e exibe o tempo total focado no dia, ajudando a metrificar a produtividade diária.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎮 Como Usar
 
-## Expanding the ESLint configuration
+1. Clique em **RESUME** para iniciar a contagem de foco. Trabalhe até sentir necessidade de pausa.
+2. Selecione a intensidade do seu próximo descanso nas opções (10%, 20% ou 40%).
+3. Clique em **SWITCH TO REST**. O aplicativo salvará seu tempo focado, fará o cálculo e iniciará a contagem regressiva da sua pausa.
+4. Ao final do tempo de descanso, o relógio para. Clique em **SWITCH TO FOCUS** para iniciar um novo ciclo zerado.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tecnologias
+
+- **React:** Gerenciamento reativo de interface e estados do tempo.
+- **Tailwind CSS:** Construção da interface fluida e responsiva.
+- **Vite:** Ferramenta de build e execução local.
+
+## 🚀 Como Rodar
+
+#### ⚠️ Pré-requisitos:
+
+- [Node.js]([https://nodejs.org/pt-br/download]) (versão +24 LTS recomendada)
+
+###
+
+1. Clone o repositório e entre na pasta:
+
+    ```bash
+        git clone https://github.com/naiqfreire/proportional-pomodoro.git
+        cd proportional-pomodoro
+    ```
+
+2. Instale as dependências (Dentro da pasta raiz do projeto):
+    ```bash
+        npm install
+    ```
+3. Inicie o servidor:
+    ```bash
+        npm run dev
+    ```
